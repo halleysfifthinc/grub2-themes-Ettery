@@ -4,24 +4,37 @@
 ![Ettery preview](EtteryPreview.png?raw=true "Preview of theme")
 
 Ettery is Grub2 theme. This theme is based on
-	
+
  - ZorinOS grub2 theme (code)
  - [Vimix by vinceliuice](http://vinceliuice.deviantart.com/art/Grub-themes-vimix-0-1-532580485) (icons)
 
 Designed primary for 1920x1080 resolution, but should work for common resolutions as well. (not tested)
 
-For further customization use [grub-customizer](https://launchpad.net/grub-customizer) to add/remove/change/rearrange entry and etc... 
+For further customization use [grub-customizer](https://launchpad.net/grub-customizer) to add/remove/change/rearrange entry and etc...
 
 -------------------------
 
 Quick install guide
 ----------------------
 
+### Easiest install method:
+
+Install Grub-customizer:
+
+```shell
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt-get update
+sudo apt-get install grub-customizer
+```
+
+Compress the Ettery folder to an archive (.tar.gz) and then load it from grub-customizer.
+Hit save.
+
 > **Note:**
 > There is ***install.sh*** script from original ZorinOS theme that automates install process, but it is not tested with this theme, therefore I recommend manual installation.
 
 #### Preparation
-Find out supported resolution by your grub. 
+Find out supported resolution by your grub.
 
  * Reboot to grub
  * Open command line by pressing "C"
@@ -38,17 +51,17 @@ Find out supported resolution by your grub.
 
  - Open **/etc/default/grub** in text editor with root
 		`sudo gedit /etc/default/grub`
- - Add/change following lines 
+ - Add/change following lines
 	```
 	GRUB_GFXMODE="1920x1080" #replace with your supported resolution
 	GRUB_GFXPAYLOAD_LINUX="keep"
 	GRUB_THEME="/boot/grub/themes/Ettery/theme.txt"
 	```
-		
+
  - Save changes in text editor
  - Update grub
     `sudo update-grub`
-    
+
     > **Note:**
     > Depending of your distribution, you might use **update-grub2** or **grub2-mkconfig -o /boot/grub/grub.cfg** , but usualy all 3 commands are the same.
 
@@ -61,7 +74,7 @@ Update grub to take effect:  `sudo update-grub`
 
 ####Uninstalling theme
 Disable theme and delete **Ettery** folder from **/boot/grub/themes**
-		
+
 
     sudo rm -r /boot/grub/themes/Ettery
 
